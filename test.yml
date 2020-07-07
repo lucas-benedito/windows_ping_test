@@ -1,0 +1,6 @@
+---
+- name: windows ping test
+  hosts: all
+  tasks:
+  - name: A windows version of the classic ping module
+    win_ping:
