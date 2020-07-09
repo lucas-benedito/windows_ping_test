@@ -13,7 +13,7 @@
   
   - name: Manage packages using chocolatey
     win_chocolatey:
-      name: notepad++
+      name: notepadplusplus
       state: latest
   
   - name: Copies files to remote locations on windows hosts
