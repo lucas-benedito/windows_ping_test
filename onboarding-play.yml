@@ -19,7 +19,7 @@
   - name: Copies files to remote locations on windows hosts
     win_copy:
       src: windows-file.txt
-      dest: C:\Users\Administrator\Downloads
+      dest: C:\Users\Administrator\Downloads\
   
   - name: Return a list of files based on specific criteria
     win_find:
