@@ -32,7 +32,7 @@
   
   - name: Ensure a particular line is in a file, or replace an existing line using a back-referenced regular expression
     win_lineinfile:
-      line: "Managed By Ansible. Try it by yourself"
+      line: "Managed By Ansible."
       path:  C:\Users\Administrator\Downloads\windows-file.txt
       state: present
   
