@@ -13,8 +13,11 @@
   
   - name: Manage packages using chocolatey
     win_chocolatey:
-      name: notepadplusplus
+      name: "{{ item }}"
       state: latest
+    loop:
+       - notepadplusplus
+       - git
   
   - name: Copies files to remote locations on windows hosts
     win_copy:
