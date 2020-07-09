@@ -46,3 +46,8 @@
       state: present
       groups_action: add
       password: '@k;6@pD6LS3bueF3-k;YZHFaXI9JgD34'
+
+  - name: Manages local Windows user accounts
+    win_user:
+      name: ansible-user
+      state: query
