@@ -24,7 +24,7 @@
   - name: Return a list of files based on specific criteria
     win_find:
       age: "-1d"
-      paths:  C:\Users\Administrator
+      paths:  C:\Users\Administrator\Downloads\
       patterns: windows-file.txt
   
   - name: Ensure a particular line is in a file, or replace an existing line using a back-referenced regular expression
