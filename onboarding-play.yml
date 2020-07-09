@@ -45,3 +45,4 @@
       groups: ansible-group
       state: present
       groups_action: add
+      password: 'redhat'
