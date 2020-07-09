@@ -1,0 +1,47 @@
+---
+- name: Onboarding playbook for windows
+  hosts: all
+  tasks:
+  - name: Set timezone to 'W. Europe Standard Time'
+    win_timezone:
+      timezone: W. Europe Standard Time
+  
+  - name: Download and install Windows updates
+    win_updates:
+      state: installed
+      reboot: yes
+  
+  - name: Manage packages using chocolatey
+    win_chocolatey:
+      name: notepad++
+      state: latest
+  
+  - name: Copies files to remote locations on windows hosts
+    win_copy:
+      src: windows-file.txt
+      dest: C:\Users\Administrator\Downloads
+  
+  - name: Return a list of files based on specific criteria
+    win_find:
+      age: "-1d"
+      paths:  C:\Users\Administrator
+      patterns: windows-file.txt
+  
+  - name: Ensure a particular line is in a file, or replace an existing line using a back-referenced regular expression
+    win_lineinfile:
+      line: "Managed By Ansible"
+      path:  C:\Users\Administrator\Downloads\windows-file.txt
+      state: present
+  
+  - name: Add and remove local groups
+    win_group:
+      description: "Added By Ansible"
+      name: "ansible-group"
+      state: present
+  
+  - name: Manages local Windows user accounts
+    win_user:
+      name: ansible-user
+      groups: ansible-group
+      state: present
+      groups_action: add
