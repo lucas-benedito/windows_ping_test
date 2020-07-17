@@ -5,7 +5,11 @@
   - name: Set timezone to 'W. Europe Standard Time'
     win_timezone:
       timezone: W. Europe Standard Time
-  
+
+  - name: Reboot a slow machine that might have lots of updates to apply
+    win_reboot:
+      reboot_timeout: 3600
+
   - name: Download and install Windows updates
     win_updates:
       state: installed
